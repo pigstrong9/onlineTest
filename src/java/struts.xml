@@ -1,0 +1,31 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <constant name="struts.i18n.encoding" value="utf-8" />
+    <!-- Configuration for the default package. -->
+    <package name="index" namespace="/"  extends="struts-default">
+        
+        <interceptors>            
+            <interceptor name="prem" class="com.interceptor.loginInterceptor"/>
+        </interceptors>
+        
+        
+        <action name="*_*" method="{2}" class="com.action.{1}">
+            <result name="message">/WEB-INF/{1}/message.jsp</result>
+            <result name="success">/WEB-INF/{1}/{2}.jsp</result> 
+            <result name="input">/WEB-INF/user/login.jsp</result>
+            <result name="show">/WEB-INF/show.jsp</result>    
+            <interceptor-ref name="defaultStack"></interceptor-ref>                 
+            <interceptor-ref name="prem"></interceptor-ref>                 
+        </action>
+    </package>
+    <package name="user" namespace="/user"  extends="struts-default">
+        <action name="*" method="{1}" class="com.action.user">
+            <result name="success" type="redirect">/index_show</result>
+            <result name="input">/WEB-INF/user/login.jsp</result>
+        </action>
+        
+    </package>
+</struts>

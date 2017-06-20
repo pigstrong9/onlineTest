@@ -1,0 +1,31 @@
+.modal-body input[type=text],.modal-body input[type=email],.modal-body input[type=password],.modal-body select{
+    width:200px;
+}
+body {
+    font-family: "Microsoft YaHei";
+    /*overflow-x: hidden;*/
+}
+.div-hide{
+    display: none;
+}
+
+.errorAndmes{ 
+    font-family:Arial, Helvetica, sans-serif; 
+    font-size:15px; color:#FF0000;
+    vertical-align:middle;
+} 
+.errorAndmes ul{ 
+    list-style-type:none;
+    margin:0px; 
+    padding:3px; 
+    vertical-align:middle;
+} .errorAndmes ul li{ 
+    list-style-type:none; 
+} 
+.ul-no{
+    list-style-type: none;
+    font-size: 15px;
+    margin-left: 0px;
+    padding-left: 5px;
+}
+
